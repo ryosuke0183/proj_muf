@@ -1,0 +1,43 @@
+@use "../forward" as *;
+
+.dl-area {
+  &__dl {
+    margin-bottom: rems(16px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.dl {
+  display: flex;
+  align-items: flex-start;
+
+  &__dt {
+    flex: 0 0 auto;
+    min-width: rems(72px);
+    margin-right: rems(12px);
+    padding: rems(1px) rems(4px) rems(2px);
+    font-size: rems(13px);
+    font-weight: 400;
+    border: 1px solid $color-text;
+    border-radius: rems(4px);
+    text-align: center;
+
+    @include media-min(vw) {
+      font-size: rems(14px);
+    }
+  }
+
+  &__dd {
+    flex: 1 0 0;
+    margin-bottom: 0;
+    font-size: rems(13px);
+    line-height: 1.6;
+
+    @include media-min(vw) {
+      font-size: rems(14px);
+    }
+  }
+}

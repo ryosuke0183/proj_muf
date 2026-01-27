@@ -1,0 +1,9 @@
+@use "../forward" as *;
+
+.link {
+  &--outer {
+    &:after {
+      @include font-awesome("\f35d");
+    }
+  }
+}

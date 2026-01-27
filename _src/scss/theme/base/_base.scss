@@ -1,0 +1,53 @@
+@use "../forward" as *;
+
+html {
+  // htmlのフォントサイズ基準ではなく、何かしらのコンポーネントが期待の数値になるようにhtmlのフォントサイズを調整するように考える。
+  // フォントサイズ指定していないテキストは16pxになってしまうので、指定するようにする。
+  // フォントサイズを指定しなくても、14pxにしたい場合は、各コンポーネントのrems()の引数に基準となるpxを指定する。
+  overflow-x: hidden;
+  @include font-family(base, regular);
+  font-size: vw($font-size-denominator);
+
+  @include media-min(vw) {
+    // font-size: unquote("clamp(0.875rem, 0.7224rem + 0.3252vw, 1rem)");
+    font-size: unquote("clamp(0.625rem, 0.1671rem + 0.9756vw, 1rem);");
+    // font-size: vw($font-size-denominator, 1366px);
+  }
+
+  @include media-min(pc) {
+    font-size: rems($font-size-denominator);
+  }
+
+  &.js-drawer-open {
+    overflow-y: hidden;
+  }
+}
+
+body {
+  color: $color-text;
+
+  *:not(span) {
+    box-sizing: border-box;
+  }
+}
+
+// section[id] {
+//   scroll-margin-top: 80px;
+//   scroll-padding-top: 80px;
+// }
+
+.page-page {
+  margin-top: rems(80px);
+
+  @include media-min(vw) {
+    margin-top: rems(120px);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  word-break: break-all;
+}

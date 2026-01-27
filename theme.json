@@ -1,0 +1,141 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "70rem",
+      "wideSize": "87.5rem"
+    },
+    "useRootPaddingAwareAlignments": true,
+    "typography": {
+      "fontSizes": [
+        {
+          "name": "小",
+          "slug": "small",
+          "size": "0.77rem"
+        },
+        { "name": "中", "slug": "medium", "size": "1rem" },
+        { "name": "大", "slug": "large", "size": "1.1rem" }
+      ],
+      "fontFamilies": [
+        {
+          "slug": "base",
+          "name": "Base",
+          "fontFamily": "Noto Sans JP, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Noto Sans JP",
+              "fontWeight": "400",
+              "src": ["file:./assets/font/NotoSansJP-Regular.ttf"]
+            },
+            {
+              "fontFamily": "Noto Sans JP",
+              "fontWeight": "500",
+              "src": ["file:./assets/font/NotoSansJP-Medium.ttf"]
+            },
+            {
+              "fontFamily": "Noto Sans JP",
+              "fontWeight": "600",
+              "src": ["file:./assets/font/NotoSansJP-SemiBold.ttf"]
+            }
+          ]
+        },
+        {
+          "slug": "primary",
+          "name": "Primary",
+          "fontFamily": "Montserrat, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Montserrat",
+              "fontWeight": "400",
+              "src": ["file:./assets/font/Montserrat-Medium.ttf"]
+            }
+          ]
+        },
+        {
+          "slug": "accent",
+          "name": "Accent",
+          "fontFamily": "KleeOne, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "KleeOne",
+              "fontWeight": "400",
+              "src": ["file:./assets/font/KleeOne-SemiBold.ttf"]
+            }
+          ]
+        }
+      ]
+    },
+    "color": {
+      "custom": false,
+      "palette": [
+        {
+          "slug": "base",
+          "color": "var:custom|color|base",
+          "name": "Base"
+        },
+        {
+          "slug": "primary",
+          "color": "var:custom|color|primary",
+          "name": "Primary"
+        }
+      ]
+    },
+    "custom": {
+      "color": {
+        "text": "#161616",
+        "base": "#ffffff",
+        "primary": "#FF612C",
+        "contrast": "#FF612C",
+        "link": "#FF612C",
+        "drawer": "rgb(255 97 44 / 80%)",
+        "border": "#000000"
+      },
+      "typography": {
+        "line-height": "1.5",
+        "font-size": {
+          "body": "14px",
+          "body-pc": "16px"
+        }
+      }
+    }
+  },
+  "styles": {
+    "spacing": {
+      "padding": {
+        "right": "1.5rem",
+        "left": "1.5rem"
+      }
+    },
+    "color": {
+      "text": "var:custom|color|text"
+    },
+    "typography": {
+      "fontFamily": "'Noto Sans JP', sans-serif",
+      "fontWeight": "400",
+      "lineHeight": "var:custom|typography|line-height",
+      "letterSpacing": "var:custom|typography|letter-spacing"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var:custom|color|contrast"
+        },
+        ":hover": {}
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "color": {
+          "text": "#ffffff",
+          "background": "var:custom|color|contrast"
+        },
+        "border": {
+          "color": "var:custom|color|primary",
+          "radius": "100vh"
+        }
+      }
+    }
+  }
+}

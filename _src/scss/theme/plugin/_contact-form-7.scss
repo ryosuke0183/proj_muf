@@ -1,0 +1,148 @@
+@use "../forward" as *;
+
+.wpcf7 {
+  margin-top: rems(40px);
+
+  @include media-min(vw) {
+    margin-top: rems(72px);
+  }
+
+  br {
+    display: none;
+  }
+}
+
+.wpcf7-form {
+  & > p {
+    & > label {
+      margin-top: rems(16px);
+
+      @include media-min(vw) {
+        margin-top: rems(32px);
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .custom-form-label {
+    width: 100%;
+
+    @include media-min(vw) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: rems(12px);
+
+      @include media-min(vw) {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+      }
+    }
+
+    &__text {
+      font-size: rems(13px);
+
+      @include media-min(vw) {
+        font-size: rems(14px);
+      }
+    }
+
+    &__require {
+      margin-left: rems(8px);
+      padding: 0 rems(6px) rems(1px);
+      color: white;
+      font-size: rems(12px);
+      background-color: $color-primary;
+      border-radius: rems(4px);
+    }
+  }
+
+  .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+
+    @include media-min(vw) {
+      flex: 0 0 percentage(div(872, 1120));
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: rems(8px) rems(16px);
+      font-size: rems(13px);
+      border: 1px solid $color-form-border;
+      border-radius: rems(4px);
+
+      @include media-min(vw) {
+        font-size: rems(14px);
+      }
+
+      &::placeholder {
+        color: $color-form-placeholder;
+      }
+    }
+
+    input {
+      @include media-min(vw) {
+        width: rems(400px);
+      }
+    }
+
+    textarea {
+      height: rems(80px);
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    margin-top: rems(8px);
+    color: rgb(218, 7, 0);
+    font-size: rems(13px);
+  }
+
+  .wpcf7-submit {
+    display: inline-block;
+    min-width: rems(240px);
+    margin-top: rems(40px);
+    margin-right: auto;
+    margin-left: auto;
+    padding: rems(16px) rems(40px);
+    color: $color-primary;
+    font-size: rems(16px);
+    border: 1px solid $color-primary;
+    border-radius: 100vh;
+    text-align: center;
+    transition: $transition-duration;
+
+    @include media-min(vw) {
+      min-width: rems(320px);
+      font-size: rems(20px);
+    }
+
+    &:hover {
+      color: white;
+      background-color: $color-primary;
+      transition: $transition-duration;
+    }
+  }
+
+  .wpcf7-spinner {
+    display: none;
+  }
+
+  .wpcf7-response-output {
+    display: none;
+  }
+
+  .wpcf7-turnstile {
+    margin-top: rems(40px);
+    text-align: center;
+  }
+}

@@ -1,0 +1,39 @@
+@use "../config/breakpoint" as *;
+
+@mixin media-max($breakpoint) {
+  $dimension: map-get(
+    $map: $breakpoints,
+    $key: $breakpoint,
+  );
+
+  @media (max-width: calc(#{$dimension} - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin media-min($breakpoint) {
+  $dimension: map-get(
+    $map: $breakpoints,
+    $key: $breakpoint,
+  );
+
+  @media (min-width: #{$dimension}) {
+    @content;
+  }
+}
+
+@mixin media-between($min, $max) {
+  $dimension-min: map-get(
+    $map: $breakpoints,
+    $key: $min,
+  );
+
+  $dimension-max: map-get(
+    $map: $breakpoints,
+    $key: $max,
+  );
+
+  @media (min-width: #{$dimension-min}) and (max-width: #{$dimension-max - 0.02px}) {
+    @content;
+  }
+}

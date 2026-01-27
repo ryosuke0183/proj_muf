@@ -1,0 +1,29 @@
+// color-setting
+
+// テーマカラー
+$color-primary: var(--wp--custom--color--primary);
+$color-accent: var(--wp--custom--color--contrast);
+
+// テキストカラー
+$color-text: var(--wp--custom--color--text);
+$color-text-grey: var(--wp--custom--color--text-grey);
+
+$color-link: var(--wp--custom--color--link);
+
+$color-grey: var(--wp--custom--color--grey);
+$color-grey-light: var(--wp--custom--color--grey-light);
+
+// ボーダー
+$color-border: var(--wp--custom--color--border);
+
+// ハンバーガー
+$color-hamburger: var(--wp--custom--color--primary);
+
+// drawer
+$color-drawer-bg: var(--wp--custom--color--drawer);
+
+// footer
+$color-footer-bg: $color-text;
+
+$color-form-placeholder: #cccccc;
+$color-form-border: $color-form-placeholder;

@@ -1,0 +1,32 @@
+@use "sass:math" as *;
+@use "../config/font-size" as *;
+
+// 単位を消す ex.16px => 16 start
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+// pxをremに変換
+// @param 変換する数値(px)
+// @param 分母の数値(px)
+@function rems($size, $base-size: $font-size-denominator) {
+  @return div(strip-unit($size), strip-unit($base-size)) * 1rem;
+}
+
+// pxをemに変換
+// @param 変換する数値(px)
+// @param 分母の数値(px)
+@function em($size, $base-size: $font-size-denominator) {
+  @return div(strip-unit($size), strip-unit($base-size)) * 1em;
+}
+
+// pxをvwに変換
+// @param 変換する数値(px)
+// @param 分母の数値(px)
+@function vw($size, $view-size: 375px) {
+  @return div(strip-unit($size), strip-unit($view-size)) * 100vw;
+}

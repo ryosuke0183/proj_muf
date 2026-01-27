@@ -1,0 +1,33 @@
+@use "../forward" as *;
+
+.inner {
+  max-width: rems(calc(map-get($inner, "normal-sp") + (map-get($inner-padding, "sp") * 2)));
+  margin: 0 auto;
+  padding: 0 rems(map-get($inner-padding, "sp"));
+
+  @include media-min(vw) {
+    max-width: rems(calc(map-get($inner, "normal-pc") + (map-get($inner-padding, "pc") * 2)));
+    padding: 0 rems(map-get($inner-padding, "pc"));
+  }
+
+  &--narrow {
+    max-width: rems(calc(map-get($inner, "narrow") + (map-get($inner-padding, "sp") * 2)));
+
+    @include media-min(vw) {
+      max-width: rems(calc(map-get($inner, "narrow") + (map-get($inner-padding, "pc") * 2)));
+    }
+  }
+
+  &--wide {
+    max-width: rems(calc(map-get($inner, "wide") + (map-get($inner-padding, "sp") * 2)));
+
+    @include media-min(vw) {
+      max-width: rems(calc(map-get($inner, "wide") + (map-get($inner-padding, "pc") * 2)));
+    }
+  }
+}
+
+.inner-full {
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+}

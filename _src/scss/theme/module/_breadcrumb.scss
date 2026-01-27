@@ -1,0 +1,42 @@
+@use "../_forward.scss" as *;
+
+// Breadcrumb NavXT
+.breadcrumbs {
+  margin-bottom: rems(48px);
+
+  @include media-min(pc) {
+    margin-bottom: rems(86px);
+  }
+
+  &__divider {
+    margin-right: rems(8px);
+    margin-left: rems(8px);
+
+    @include media-min(pc) {
+      margin-right: rems(11px);
+      margin-left: rems(11px);
+    }
+  }
+
+  * {
+    @include font-family(main, regular);
+    font-size: rems(14px);
+
+    @include media-min(pc) {
+      font-size: rems(16px);
+    }
+  }
+
+  br {
+    display: none;
+  }
+
+  a {
+    color: $color-text;
+    text-decoration: none;
+  }
+
+  .current-item {
+    color: $color-accent;
+  }
+}

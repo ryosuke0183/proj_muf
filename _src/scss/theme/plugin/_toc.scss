@@ -1,0 +1,77 @@
+@use "../forward" as *;
+
+// easy table of contents
+
+#ez-toc-container {
+  margin-top: rems(48px);
+  margin-bottom: rems(48px);
+  padding: rems(24px) rems(24px) rems(26px);
+  background-color: white;
+  border: 1px solid $color-primary;
+  border-radius: rems(8px);
+
+  @include media-min(pc) {
+    margin-top: rems(45px);
+    margin-bottom: rems(60px);
+    padding: rems(35px) rems(40px) rems(40px);
+  }
+
+  .ez-toc-title {
+    margin-top: 0;
+    color: $color-primary;
+    @include font-family(base, medium);
+    font-size: rems(18px);
+
+    @include media-min(pc) {
+      font-size: rems(20px);
+    }
+  }
+
+  nav {
+    margin-top: rems(12px);
+
+    @include media-min(pc) {
+      margin-top: rems(18px);
+    }
+  }
+
+  .ez-toc-list {
+    & > li {
+      margin-bottom: rems(16px);
+      padding-bottom: rems(14px);
+      border-bottom: 1px dashed $color-border;
+
+      @include media-min(pc) {
+        padding-bottom: rems(17px);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+
+  .ez-toc-list-level-3 {
+    margin-top: rems(7px);
+    margin-left: rems(20px);
+
+    a {
+      color: $color-text-grey;
+    }
+  }
+
+  .ez-toc-heading-level-3 {
+    margin-bottom: rems(5px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ez-toc-link {
+    color: $color-text;
+    text-decoration: none;
+  }
+}

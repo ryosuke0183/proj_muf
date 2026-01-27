@@ -1,0 +1,55 @@
+@use "../forward" as *;
+
+.footer {
+  margin-top: rems(64px);
+  padding-top: rems(40px);
+  padding-bottom: rems(40px);
+  color: white;
+  background-color: $color-footer-bg;
+
+  @include media-min(vw) {
+    margin-top: rems(80px);
+  }
+
+  &__inner {
+    @include media-min(vw) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    margin-bottom: rems(24px);
+    max-width: rems(88px);
+
+    @include media-min(vw) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright {
+    margin-top: rems(24px);
+
+    @include media-min(vw) {
+      align-self: flex-end;
+      margin-top: 0;
+    }
+  }
+}
+
+.widget-footer-company-info {
+  font-size: rems(12px);
+  line-height: 1.6;
+  text-align: left;
+
+  @include media-min(vw) {
+    flex: 1 0 0;
+    margin-left: rems(72px);
+  }
+}
+
+.copyright {
+  &__text {
+    font-size: rems(12px);
+  }
+}

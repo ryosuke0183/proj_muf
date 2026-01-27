@@ -1,0 +1,75 @@
+@use "../forward" as *;
+
+.media-text {
+  &--wide {
+    @include media-min(vw) {
+      margin-right: calc(50% - 50vw);
+      margin-left: calc(50% - 50vw);
+    }
+  }
+
+  &__inner {
+    @include media-min(vw) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: rems(72px);
+    }
+  }
+
+  &--reverse &__inner {
+    @include media-min(vw) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--narrow &__inner {
+    @include media-min(vw) {
+      max-width: rems(976px);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &--wide &__inner {
+    @include media-min(vw) {
+      max-width: rems(1366px);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &--wide &__wrapper {
+    @include media-min(vw) {
+      max-width: rems(488px + map-get($inner-padding, "pc"));
+      margin-right: auto;
+      padding-right: rems(map-get($inner-padding, "pc"));
+    }
+  }
+
+  &__heading {
+    margin-bottom: rems(16px);
+
+    @include media-min(vw) {
+      margin-bottom: rems(32px);
+    }
+  }
+
+  &__body {
+    font-size: rems(13px);
+    line-height: 2.4;
+
+    @include media-min(vw) {
+      font-size: rems(16px);
+    }
+  }
+
+  &__img-wrapper {
+    margin-top: rems(24px);
+
+    @include media-min(vw) {
+      flex: 0 0 50%;
+      margin-top: 0;
+    }
+  }
+}

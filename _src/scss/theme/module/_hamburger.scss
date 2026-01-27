@@ -1,0 +1,116 @@
+@use "../forward" as *;
+
+.hamburger {
+  width: rems(56px);
+  height: rems(56px);
+  padding: rems(16px) rems(14px) rems(6px) rems(14px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $z-hamburger;
+
+  @include media-min(vw) {
+    display: none;
+  }
+
+  &__lines {
+    width: 100%;
+    height: rems(15px);
+    position: relative;
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    transition: $transition-duration;
+
+    @at-root .js-drawer-open & {
+      background-color: white !important;
+      transition: $transition-duration;
+    }
+
+    @at-root .js-scrolled & {
+      background-color: $color-primary;
+      transition: $transition-duration;
+    }
+  }
+
+  &__line-1 {
+    top: 0;
+
+    @at-root .js-drawer-open & {
+      top: 50%;
+      transform: translateY(1px) rotate(45deg);
+      transition: $transition-duration;
+    }
+  }
+
+  &__line-2 {
+    top: rems(7px);
+
+    @at-root .js-drawer-open & {
+      opacity: 0;
+      transition: 0.2s;
+    }
+  }
+
+  &__line-3 {
+    top: 100%;
+
+    @at-root .js-drawer-open & {
+      top: 50%;
+      transform: translateY(50%) rotate(-45deg);
+      transition: $transition-duration;
+    }
+  }
+
+  &__text-wrapper {
+    margin-top: rems(6px);
+    position: relative;
+    z-index: 0;
+  }
+
+  &__text {
+    display: block;
+    color: white;
+    @include font-family(main, medium);
+    font-size: rems(10px);
+    transition: $transition-duration;
+
+    @at-root .js-drawer-open & {
+      color: white !important;
+      transition: $transition-duration;
+    }
+
+    @at-root .js-scrolled & {
+      color: $color-primary;
+      transition: $transition-duration;
+    }
+  }
+
+  &__text-menu {
+    @at-root .js-drawer-open & {
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition-duration;
+    }
+  }
+
+  &__text-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+
+    @at-root .js-drawer-open & {
+      opacity: 1;
+      visibility: visible;
+      transition: $transition-duration;
+    }
+  }
+}

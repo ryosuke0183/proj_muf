@@ -1,0 +1,7 @@
+$breakpoints: (
+  vw: 751px,
+  // 992px~1366pxはvw
+  pc: 1367px,
+  // 1366px以上は拡大しない
+  drawer: 751px, // vw: 768px,
+);

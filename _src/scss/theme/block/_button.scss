@@ -1,0 +1,44 @@
+@use "../_forward.scss" as *;
+
+.button,
+.wp-block-button__link {
+  display: inline-block;
+  min-width: rems(240px);
+  padding: rems(16px) rems(40px);
+  color: $color-primary;
+  background-color: white;
+  font-size: rems(16px);
+  border: 1px solid $color-primary;
+  border-radius: 100vh;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  transition: $transition-duration;
+
+  @include media-min(vw) {
+    min-width: rems(320px);
+    font-size: rems(20px);
+  }
+
+  &:hover {
+    color: white;
+    background-color: $color-primary;
+    transition: $transition-duration;
+  }
+
+  &:hover:after {
+    color: white;
+    transition: $transition-duration;
+  }
+
+  &--outer {
+    &:after {
+      @include font-awesome("\f35d");
+      font-size: rems(14px);
+      position: absolute;
+      top: 50%;
+      right: rems(12px);
+      transform: translate(0, -50%);
+    }
+  }
+}

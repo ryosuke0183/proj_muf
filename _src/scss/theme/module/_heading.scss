@@ -1,0 +1,42 @@
+@use "../forward" as *;
+
+.heading {
+  @include font-family(accent, semibold);
+  font-size: rems(18px);
+  line-height: 2;
+
+  @include media-min(vw) {
+    font-size: rems(28px);
+  }
+
+  &--large {
+    font-size: rems(24px);
+
+    @include media-min(vw) {
+      font-size: rems(40px);
+    }
+  }
+}
+
+.heading-subtitle {
+  &__en {
+    display: block;
+    @include font-family(main, medium);
+    font-size: rems(32px);
+    line-height: 1.6;
+
+    @include media-min(vw) {
+      font-size: rems(48px);
+    }
+  }
+
+  &__ja {
+    display: block;
+    font-size: rems(14px);
+    line-height: 1.6;
+
+    @include media-min(vw) {
+      font-size: rems(18px);
+    }
+  }
+}

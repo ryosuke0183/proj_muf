@@ -1,0 +1,21 @@
+@use "../forward" as *;
+
+.sidebar {
+  & > *:first-child {
+    margin-top: 0;
+
+    @include media-min(pc) {
+      margin-top: rems(-4px);
+    }
+  }
+}
+
+.sidebar {
+  &__heading {
+    margin-top: rems(48px);
+
+    @include media-min(pc) {
+      margin-top: rems(56px);
+    }
+  }
+}

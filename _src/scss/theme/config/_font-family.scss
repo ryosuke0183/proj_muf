@@ -1,0 +1,16 @@
+// font-family
+$font-family: (
+  base: var(--wp--preset--font-family--base),
+  main: var(--wp--preset--font-family--primary),
+  accent: var(--wp--preset--font-family--accent),
+);
+
+$font-weights: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  black: 900,
+);

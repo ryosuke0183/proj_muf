@@ -1,0 +1,120 @@
+@use "../forward" as *;
+
+.swiper-global-wrapper {
+  overflow: hidden;
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    transition-timing-function: ease;
+  }
+}
+
+.swiper-custom {
+  .swiper-online-store-slide {
+    color: $color-text;
+    text-decoration: none;
+    align-items: flex-start;
+
+    &__title {
+      display: block;
+      margin-top: rems(16px);
+      font-size: rems(13px);
+      line-height: 1.6;
+
+      @include media-min(vw) {
+        font-size: rems(16px);
+      }
+    }
+
+    &__price {
+      display: block;
+      margin-top: rems(16px);
+      @include font-family(main, medium);
+      font-size: rems(16px);
+      text-align: left;
+
+      @include media-min(vw) {
+        font-size: rems(18px);
+      }
+    }
+  }
+}
+
+.swiper-custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: rems(12px);
+  margin-top: rems(22px);
+
+  @include media-min(vw) {
+    gap: rems(16px);
+    margin-top: rems(48px);
+  }
+
+  &__dot {
+    display: inline-block;
+    width: rems(12px);
+    height: rems(12px);
+    border-radius: rems(12px);
+    background-color: #d9d9d9;
+
+    @include media-min(vw) {
+      width: rems(16px);
+      height: rems(16px);
+      border-radius: rems(16px);
+    }
+
+    &.swiper-pagination-bullet-active {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.swiper-custom-button {
+  width: rems(48px);
+  height: rems(48px);
+  background-color: rgba(white, 0.8);
+  border: 1px solid $color-primary;
+  border-radius: 100vh;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -100%);
+  z-index: 1;
+  transition: $transition-duration;
+
+  @include media-min(vw) {
+    display: none;
+  }
+
+  &[aria-disabled="true"] {
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition-duration;
+  }
+
+  @at-root .swiper-custom-loop &[aria-disabled="true"] {
+    opacity: unset;
+    visibility: unset;
+    transition: unset;
+  }
+
+  & > i {
+    color: $color-primary;
+    font-size: rems(14px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.swiper-custom-button-next {
+  right: rems(-16px);
+}
+
+.swiper-custom-button-prev {
+  left: rems(-16px);
+}

@@ -1,0 +1,261 @@
+@use "../forward" as *;
+
+.section-mv {
+  position: relative;
+  z-index: 0;
+
+  &__logo {
+    width: auto;
+    height: rems(88px);
+    position: absolute;
+    top: rems(344px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+
+    @include media-min(vw) {
+      height: rems(173px);
+      top: 50%;
+      left: rems(123px);
+      transform: translate(0%, -50%);
+    }
+  }
+
+  &__mv {
+    &:before,
+    &:after {
+      @include media-min(vw) {
+        content: "";
+        display: block;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        z-index: 0;
+        opacity: 0.5;
+      }
+    }
+
+    &:before {
+      width: rems(472px);
+      background: linear-gradient(90deg, rgba(#161616, 0.7), rgba(white, 0));
+      left: 0;
+    }
+
+    &:after {
+      width: rems(280px);
+      background: linear-gradient(-90deg, rgba(#161616, 0.7), rgba(white, 0));
+      right: 0;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include media-min(vw) {
+      display: block;
+      text-align: end;
+      position: absolute;
+      top: 50%;
+      right: rems(80px);
+      transform: translate(0, -50%);
+      z-index: 1;
+    }
+  }
+
+  &__nav-list {
+    .menu-item {
+      @include media-min(vw) {
+        margin-bottom: rems(20px);
+      }
+
+      &:last-child {
+        @include media-min(vw) {
+          margin-bottom: 0;
+        }
+      }
+
+      & > a {
+        @include media-min(vw) {
+          color: white;
+          @include font-family(main, medium);
+          font-size: rems(20px);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .widget-sns {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: rems(16px);
+    margin-top: rems(24px);
+
+    & > a {
+      color: white;
+      font-size: rems(32px);
+    }
+  }
+}
+
+.section-about {
+  padding-top: rems(64px);
+  padding-bottom: rems(64px);
+
+  @include media-min(vw) {
+    padding-top: rems(120px);
+    padding-bottom: rems(120px);
+  }
+
+  &__en {
+    display: block;
+    @include font-family(main, medium);
+    font-size: rems(16px);
+    text-align: center;
+  }
+
+  &__heading {
+    margin-bottom: rems(32px);
+
+    @include media-min(vw) {
+      margin-bottom: rems(48px);
+    }
+  }
+
+  &__body {
+    font-size: rems(14px);
+    line-height: 2.4;
+
+    @include media-min(vw) {
+      font-size: rems(16px);
+    }
+  }
+
+  &__img {
+    margin-top: rems(48px);
+
+    @include media-min(vw) {
+      margin-top: rems(96px);
+    }
+  }
+
+  &__media-text-area {
+    margin-top: rems(40px);
+
+    @include media-min(vw) {
+      margin-top: rems(96px);
+    }
+  }
+
+  &__media-text-item {
+    margin-bottom: rems(40px);
+
+    @include media-min(vw) {
+      margin-bottom: rems(96px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.section-online-store,
+.section-shop,
+.section-media,
+.section-contact {
+  margin-top: rems(64px);
+
+  @include media-min(vw) {
+    margin-top: rems(120px);
+  }
+}
+
+.section-online-store {
+  &__header {
+    margin-bottom: rems(40px);
+
+    @include media-min(vw) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: rems(72px);
+    }
+  }
+
+  &__button-sp {
+    margin-top: rems(40px);
+  }
+}
+
+.section-shop,
+.section-media,
+.section-contact {
+  &__heading {
+    margin-bottom: rems(40px);
+
+    @include media-min(vw) {
+      margin-bottom: rems(72px);
+    }
+  }
+}
+
+.section-shop {
+  &__media-text {
+    @include media-min(vw) {
+      display: flex;
+      align-items: center;
+      gap: rems(72px);
+    }
+  }
+
+  &__img-wrapper {
+    margin-bottom: rems(40px);
+
+    @include media-min(vw) {
+      flex: 0 0 percentage(div(600, 1120));
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: rems(24px);
+    font-size: rems(20px);
+    line-height: 1.6;
+  }
+
+  &__address {
+    font-size: rems(13px);
+
+    @include media-min(vw) {
+      font-size: rems(14px);
+    }
+  }
+
+  &__details {
+    margin-top: rems(24px);
+  }
+}
+
+.section-media {
+  .swiper-custom-pagination {
+    margin-top: rems(32px);
+
+    @include media-min(vw) {
+      margin-top: rems(48px);
+    }
+  }
+}
+
+.section-contact {
+  &__text {
+    font-size: rems(13px);
+    line-height: 2;
+
+    @include media-min(vw) {
+      font-size: rems(14px);
+    }
+  }
+}
