@@ -43,6 +43,14 @@
   }
 }
 
+.swiper-custom-loop {
+  .swiper-slide {
+    @include media-min(vw) {
+      width: rems(400px);
+    }
+  }
+}
+
 .swiper-custom-pagination {
   display: flex;
   justify-content: center;

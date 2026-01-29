@@ -23,9 +23,13 @@
     display: block;
     width: 100%;
     height: 1px;
-    background-color: white;
+    background-color: $color-primary;
     position: absolute;
     transition: $transition-duration;
+
+    @at-root .page-front & {
+      background-color: white;
+    }
 
     @at-root .js-drawer-open & {
       background-color: white !important;
@@ -75,10 +79,14 @@
 
   &__text {
     display: block;
-    color: white;
+    color: $color-primary;
     @include font-family(main, medium);
     font-size: rems(10px);
     transition: $transition-duration;
+
+    @at-root .page-front & {
+      color: white;
+    }
 
     @at-root .js-drawer-open & {
       color: white !important;

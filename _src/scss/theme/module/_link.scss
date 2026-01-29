@@ -3,6 +3,8 @@
 .link {
   &--outer {
     &:after {
+      margin-right: rems(2px);
+      margin-left: rems(2px);
       @include font-awesome("\f35d");
     }
   }
