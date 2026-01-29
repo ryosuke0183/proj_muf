@@ -27,16 +27,19 @@
             {
               "fontFamily": "Noto Sans JP",
               "fontWeight": "400",
+              "fontDisplay": "swap",
               "src": ["file:./assets/font/NotoSansJP-Regular.ttf"]
             },
             {
               "fontFamily": "Noto Sans JP",
               "fontWeight": "500",
+              "fontDisplay": "swap",
               "src": ["file:./assets/font/NotoSansJP-Medium.ttf"]
             },
             {
               "fontFamily": "Noto Sans JP",
               "fontWeight": "600",
+              "fontDisplay": "swap",
               "src": ["file:./assets/font/NotoSansJP-SemiBold.ttf"]
             }
           ]
@@ -49,6 +52,7 @@
             {
               "fontFamily": "Montserrat",
               "fontWeight": "400",
+              "fontDisplay": "swap",
               "src": ["file:./assets/font/Montserrat-Medium.ttf"]
             }
           ]
@@ -61,6 +65,7 @@
             {
               "fontFamily": "KleeOne",
               "fontWeight": "400",
+              "fontDisplay": "swap",
               "src": ["file:./assets/font/KleeOne-SemiBold.ttf"]
             }
           ]

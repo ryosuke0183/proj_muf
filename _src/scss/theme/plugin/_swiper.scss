@@ -58,6 +58,7 @@
   margin-top: rems(22px);
 
   @include media-min(vw) {
+    display: none;
     gap: rems(16px);
     margin-top: rems(48px);
   }
@@ -94,7 +95,9 @@
   transition: $transition-duration;
 
   @include media-min(vw) {
-    display: none;
+    // display: none;
+    width: rems(56px);
+    height: rems(56px);
   }
 
   &[aria-disabled="true"] {
@@ -107,6 +110,12 @@
     opacity: unset;
     visibility: unset;
     transition: unset;
+
+    @include media-min(vw) {
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition-duration;
+    }
   }
 
   & > i {
@@ -116,13 +125,33 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include media-min(vw) {
+      font-size: rems(16px);
+    }
   }
 }
 
 .swiper-custom-button-next {
   right: rems(-16px);
+
+  @include media-min(vw) {
+    right: rems(-32px);
+  }
+
+  @include media-min(pc) {
+    right: rems(-88px);
+  }
 }
 
 .swiper-custom-button-prev {
   left: rems(-16px);
+
+  @include media-min(vw) {
+    left: rems(-32px);
+  }
+
+  @include media-min(pc) {
+    left: rems(-88px);
+  }
 }

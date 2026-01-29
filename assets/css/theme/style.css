@@ -658,12 +658,13 @@ a {
 }
 
 .drawer {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: var(--wp--custom--color--drawer);
   position: fixed;
   top: 0;
   left: 0;
+  overflow-x: hidden;
   overflow-y: auto;
   opacity: 0;
   visibility: hidden;
@@ -1313,6 +1314,7 @@ a {
 }
 @media (min-width: 751px) {
   .swiper-custom-pagination {
+    display: none;
     gap: 1rem;
     margin-top: 3rem;
   }
@@ -1349,7 +1351,8 @@ a {
 }
 @media (min-width: 751px) {
   .swiper-custom-button {
-    display: none;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }
 .swiper-custom-button[aria-disabled=true] {
@@ -1362,6 +1365,13 @@ a {
   visibility: unset;
   transition: unset;
 }
+@media (min-width: 751px) {
+  .swiper-custom-loop .swiper-custom-button[aria-disabled=true] {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+  }
+}
 
 .swiper-custom-button > i {
   color: var(--wp--custom--color--primary);
@@ -1371,13 +1381,38 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media (min-width: 751px) {
+  .swiper-custom-button > i {
+    font-size: 1rem;
+  }
+}
 
 .swiper-custom-button-next {
   right: -1rem;
 }
+@media (min-width: 751px) {
+  .swiper-custom-button-next {
+    right: -2rem;
+  }
+}
+@media (min-width: 1367px) {
+  .swiper-custom-button-next {
+    right: -5.5rem;
+  }
+}
 
 .swiper-custom-button-prev {
   left: -1rem;
+}
+@media (min-width: 751px) {
+  .swiper-custom-button-prev {
+    left: -2rem;
+  }
+}
+@media (min-width: 1367px) {
+  .swiper-custom-button-prev {
+    left: -5.5rem;
+  }
 }
 
 #ez-toc-container {

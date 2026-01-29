@@ -91,66 +91,57 @@ $class_page = "page-front"; ?>
       </div>
     </section>
     <section id="online-store" class="section-online-store">
-      <div class="section-online-store__inner">
-        <div class="inner section-online-store__header">
+      <div class="inner section-online-store__inner">
+        <div class="section-online-store__header">
           <h2 class="heading-subtitle section-online-store__heading">
             <span class="heading-subtitle__en">Online Store</span>
             <span class="heading-subtitle__ja">オンラインストア</span>
           </h2>
           <a href="<?php echo esc_url(SCF::get_option_meta( 'online-shop-option', 'online-store-url' )) ?>" class="d-none d-vw-inline-block button button--outer section-online-store__button-top" target="_blank">オンラインストア</a>
         </div>
-        <div class="swiper-global-wrapper">
-          <div class="inner swiper-global-inner">
-            <div class="swiper-custom swiper">
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper">
-                <!-- Slides -->
-                <?php 
-                  $online_store = SCF::get_option_meta( 'online-shop-option', 'online-store-item' );
+        <!-- Slider main container -->
+        <div class="slick-online-store slick-custom">
+          <div class="slick-custom__inner">
+            <div class="slick-custom__core">
+              <?php 
+                $online_store = SCF::get_option_meta( 'online-shop-option', 'online-store-item' );
+              ?>
+              <?php foreach($online_store as $item): ?>
+                <?php
+                  $online_store_url = $item["online-store-item-url"];
+
+                  $online_store_image_id = $item["online-store-item-image"];
+                  $online_store_image_data = wp_get_attachment_image_src($online_store_image_id, "full");
+                  $online_store_image_url = $online_store_image_data[0];
+                  $online_store_image_alt = get_post_meta($online_store_image_id, "_wp_attachment_alt", true);
+
+                  $online_store_title = $item["online-store-item-title"];
+                  $online_store_price = $item["online-store-item-price"];           
+                
                 ?>
-                <?php foreach($online_store as $item): ?>
-                  <?php
-                    $online_store_url = $item["online-store-item-url"];
-
-                    $online_store_image_id = $item["online-store-item-image"];
-                    $online_store_image_data = wp_get_attachment_image_src($online_store_image_id, "full");
-                    $online_store_image_url = $online_store_image_data[0];
-                    $online_store_image_alt = get_post_meta($online_store_image_id, "_wp_attachment_alt", true);
-
-                    $online_store_title = $item["online-store-item-title"];
-                    $online_store_price = $item["online-store-item-price"];           
-                  
-                  ?>
-                  <?php echo $online_store_url == ''
-                    ? "<div class='swiper-online-store-slide swiper-slide'>" 
-                    : "<a class='swiper-online-store-slide swiper-slide' href='" . esc_url($online_store_url) . "'>"
-                  ?>
-                    <img src="<?php echo esc_url($online_store_image_url) ?>">
-                    <span class="swiper-online-store-slide__title">
-                      <?php 
-                        $limit = 40;
-                        if(mb_strlen($online_store_title) >= $limit) {
-                          $online_store_title = mb_substr($online_store_title, 0, $limit) . "...";
-                        }
-                        echo $online_store_title;
-                      ?>
-                    </span>
-                    <?php
-                      $online_store_price_result = ($online_store_price != "") ? "¥".number_format((int) $online_store_price) : "";
+                <?php echo $online_store_url == ''
+                  ? "<div class='slick-online-store-slide'>" 
+                  : "<a class='slick-online-store-slide' href='" . esc_url($online_store_url) . "'>"
+                ?>
+                  <img src="<?php echo esc_url($online_store_image_url) ?>">
+                  <span class="slick-online-store-slide__title">
+                    <?php 
+                      $limit = 40;
+                      if(mb_strlen($online_store_title) >= $limit) {
+                        $online_store_title = mb_substr($online_store_title, 0, $limit) . "...";
+                      }
+                      echo $online_store_title;
                     ?>
-                    <span class="swiper-online-store-slide__price"><?php echo $online_store_price_result ?></span>              
-                  <?php echo $online_store_url == ''
-                    ? "</div>" 
-                    : "</a>"
+                  </span>
+                  <?php
+                    $online_store_price_result = ($online_store_price != "") ? "¥".number_format((int) $online_store_price) : "";
                   ?>
-                <?php endforeach ?>
-              </div>
-              <!-- If we need pagination -->
-              <div class="swiper-custom-pagination"></div>
-
-              <!-- If we need navigation buttons -->
-              <div class="swiper-custom-button-prev swiper-custom-button"><i class="fa-solid fa-arrow-left"></i></div>
-              <div class="swiper-custom-button-next swiper-custom-button"><i class="fa-solid fa-arrow-right"></i></div>
+                  <span class="slick-online-store-slide__price"><?php echo $online_store_price_result ?></span>              
+                <?php echo $online_store_url == ''
+                  ? "</div>" 
+                  : "</a>"
+                ?>
+              <?php endforeach ?>
             </div>
           </div>
         </div>
@@ -193,39 +184,28 @@ $class_page = "page-front"; ?>
       </div>
     </section>
     <section id="media" class="section-media">
-      <div class="section-media__inner">
-        <h2 class="inner heading-subtitle section-media__heading">
+      <div class="inner section-media__inner">
+        <h2 class="heading-subtitle section-media__heading">
           <span class="heading-subtitle__en">Media</span>
           <span class="heading-subtitle__ja">メディア出演</span>
         </h2>      
-        <div class="swiper-global-wrapper">
-          <div class="inner swiper-global-inner">
-            <!-- Slider main container -->
-            <div class="swiper-custom-loop swiper">
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper">
-                <!-- Slides -->
-                <?php 
-                  $media = SCF::get_option_meta( 'media-option', 'media' );;
+        <div class="slick-media slick-custom">
+          <div class="slick-custom__inner">
+            <div class="slick-custom__core">
+              <?php 
+                $media = SCF::get_option_meta( 'media-option', 'media' );;
+              ?>
+              <?php foreach($media as $item): ?>
+                <?php
+                  $media_image_id = $item["media-image"];
+                  $media_image_data = wp_get_attachment_image_src($media_image_id, "full");
+                  $media_image_url = $media_image_data[0];
+                  $media_image_alt = get_post_meta($media_image_id, "_wp_attachment_alt", true);        
                 ?>
-                <?php foreach($media as $item): ?>
-                  <?php
-                    $media_image_id = $item["media-image"];
-                    $media_image_data = wp_get_attachment_image_src($media_image_id, "full");
-                    $media_image_url = $media_image_data[0];
-                    $media_image_alt = get_post_meta($media_image_id, "_wp_attachment_alt", true);        
-                  ?>
-                  <div class="swiper-slide">
-                    <img src="<?php echo esc_url($media_image_url) ?>">
-                  </div>
-                <?php endforeach ?>
-              </div>
-              <!-- If we need pagination -->
-              <div class="swiper-custom-pagination"></div>
-
-              <!-- If we need navigation buttons -->
-              <div class="swiper-custom-button-prev swiper-custom-button"><i class="fa-solid fa-arrow-left"></i></div>
-              <div class="swiper-custom-button-next swiper-custom-button"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="slick-media-slide">
+                  <img src="<?php echo esc_url($media_image_url) ?>">
+                </div>
+              <?php endforeach ?>
             </div>
           </div>
         </div>
