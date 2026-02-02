@@ -97,16 +97,14 @@
 }
 .section-about__en {
   display: block;
+  margin-bottom: 2rem;
   font-family: var(--wp--preset--font-family--primary);
   font-weight: 500;
   font-size: 1rem;
   text-align: center;
 }
-.section-about__heading {
-  margin-bottom: 2rem;
-}
 @media (min-width: 751px) {
-  .section-about__heading {
+  .section-about__en {
     margin-bottom: 3rem;
   }
 }

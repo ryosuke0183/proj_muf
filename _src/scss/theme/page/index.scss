@@ -108,15 +108,15 @@
     padding-bottom: rems(120px);
   }
 
+  &__heading {
+  }
+
   &__en {
     display: block;
+    margin-bottom: rems(32px);
     @include font-family(main, medium);
     font-size: rems(16px);
     text-align: center;
-  }
-
-  &__heading {
-    margin-bottom: rems(32px);
 
     @include media-min(vw) {
       margin-bottom: rems(48px);

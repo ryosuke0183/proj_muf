@@ -42,8 +42,8 @@ $class_page = "page-front"; ?>
     </div>
     <section id="about" class="section-about">
       <div class="inner section-about__inner">
-        <span class="text-center section-about__en">What's</span>
-        <h2 class="text-center heading heading--large section-about__heading"><?php echo nl2br(post_custom("about-1-heading")) ?></h2>
+        <h2 class="text-center heading-border-side section-about__heading"><span class="heading-border-side__text"><?php echo nl2br(post_custom("about-1-heading")) ?></span></h2>
+        <span class="text-center section-about__en"><?php echo nl2br(post_custom("about-1-subtitle")) ?></span>
         <p class="text-center section-about__body"><?php echo nl2br(post_custom("about-1-body")) ?></p>
         <?php
           $about_1_img_id = post_custom("about-1-image"); 

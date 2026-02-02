@@ -874,6 +874,44 @@ a {
   }
 }
 
+.heading-border-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--wp--preset--font-family--accent);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2;
+}
+@media (min-width: 751px) {
+  .heading-border-side {
+    font-size: 2.5rem;
+  }
+}
+.heading-border-side:before, .heading-border-side:after {
+  content: "";
+  display: inline-block;
+  flex: 0 1 3rem;
+  height: 1px;
+  background-color: var(--wp--custom--color--text);
+}
+@media (min-width: 751px) {
+  .heading-border-side:before, .heading-border-side:after {
+    flex: 0 1 6rem;
+  }
+}
+.heading-border-side__text {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+@media (min-width: 751px) {
+  .heading-border-side__text {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+
 .link--outer:after {
   margin-right: 0.125rem;
   margin-left: 0.125rem;

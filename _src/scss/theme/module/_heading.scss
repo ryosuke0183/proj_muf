@@ -40,3 +40,40 @@
     }
   }
 }
+
+.heading-border-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font-family(accent, semibold);
+  font-size: rems(24px);
+  line-height: 2;
+
+  @include media-min(vw) {
+    font-size: rems(40px);
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    flex: 0 1 rems(48px);
+    height: 1px;
+    background-color: $color-text;
+
+    @include media-min(vw) {
+      flex: 0 1 rems(96px);
+    }
+  }
+
+  &__text {
+    flex: 0 0 auto;
+    margin-right: rems(8px);
+    margin-left: rems(8px);
+
+    @include media-min(vw) {
+      margin-right: rems(16px);
+      margin-left: rems(16px);
+    }
+  }
+}
