@@ -222,6 +222,19 @@
   margin-top: 1.5rem;
 }
 
+.section-media__media-title {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--wp--preset--font-family--primary);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  text-align: left;
+}
+@media (min-width: 751px) {
+  .section-media__media-title {
+    font-size: 1rem;
+  }
+}
 .section-media .swiper-custom-pagination {
   margin-top: 2rem;
 }

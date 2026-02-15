@@ -240,6 +240,18 @@
 }
 
 .section-media {
+  &__media-title {
+    display: block;
+    margin-top: rems(16px);
+    @include font-family(main, regular);
+    font-size: rems(13px);
+    text-align: left;
+
+    @include media-min(vw) {
+      font-size: rems(16px);
+    }
+  }
+
   .swiper-custom-pagination {
     margin-top: rems(32px);
 

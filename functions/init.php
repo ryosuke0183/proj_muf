@@ -23,19 +23,19 @@ add_action('wp_enqueue_scripts', function () {
     'style',
     get_theme_file_uri('/assets/css/theme/style.css'),
     array("bootstrap-css"),
-    date("ymdHis", filemtime( get_stylesheet_directory().'/assets/css/theme/style.css')),
+    date("ymdHis", filemtime(get_stylesheet_directory() . '/assets/css/theme/style.css')),
     'all'
   );
 
   // template-file:css
-  if(is_front_page()) {
+  if (is_front_page()) {
     wp_enqueue_style(
       'index-stylesheet',
       get_theme_file_uri('/assets/css/theme/page/index.css'),
       array("style"),
-      date("ymdHis", filemtime( get_stylesheet_directory().'/assets/css/theme/page/index.css')),
+      date("ymdHis", filemtime(get_stylesheet_directory() . '/assets/css/theme/page/index.css')),
       'all'
-    );    
+    );
   }
 
   // plugin:bootstrap-popper
@@ -128,7 +128,7 @@ add_action('wp_enqueue_scripts', function () {
     'index',
     get_theme_file_uri('/assets/js/bundle.js'),
     array("bootstrap-popper", "bootstrap-js", "slick-js", "jquery-new"),
-    date("ymdHis", filemtime( get_theme_file_path('/assets/js/bundle.js'))),
+    date("ymdHis", filemtime(get_theme_file_path('/assets/js/bundle.js'))),
     true
   );
 });
@@ -182,28 +182,28 @@ add_theme_support('post-thumbnails');
 
 // SCFオプションページ
 SCF::add_options_page(
-	'オンラインショップ',
-	'オンラインショップ(商品一覧)',
-	'manage_options',
-	'online-shop-option',
-	'dashicons-admin-generic',
-	11
+  'オンラインショップ',
+  'オンラインショップ(商品一覧)',
+  'publish_posts',
+  'online-shop-option',
+  'dashicons-admin-generic',
+  11
 );
 
 SCF::add_options_page(
-	'メディア出演',
-	'メディア出演',
-	'manage_options',
-	'media-option',
-	'dashicons-admin-generic',
-	11
+  'メディア出演',
+  'メディア出演',
+  'publish_posts',
+  'media-option',
+  'dashicons-admin-generic',
+  11
 );
 
 SCF::add_options_page(
-	'店舗案内',
-	'店舗案内',
-	'manage_options',
-	'shop-option',
-	'dashicons-admin-generic',
-	11
+  '店舗案内',
+  '店舗案内',
+  'publish_posts',
+  'shop-option',
+  'dashicons-admin-generic',
+  11
 );
